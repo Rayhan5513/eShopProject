@@ -1,11 +1,41 @@
 <template>
-    <nav class="bg-blue-500 text-white p-4 flex justify-between">
-      <ul class="flex space-x-4">
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/product">Product</NuxtLink></li>
-        <li><NuxtLink to="/cart">Cart</NuxtLink></li>
-        <li><NuxtLink to="/favorites">Favorite Products</NuxtLink></li>
-      </ul>
-    </nav>
-  </template>
-  
+  <nav class="bg-blue-500 text-white p-4 flex justify-between items-center">
+    <!-- Home Button on the Left -->
+    <div>
+      <NuxtLink
+        to="/"
+        class="bg-white text-blue-500 px-4 py-2 rounded shadow hover:bg-blue-600 hover:text-white transition"
+      >
+        Home
+      </NuxtLink>
+    </div>
+
+    <!-- Other Buttons on the Right -->
+    <ul class="flex space-x-4">
+      <li>
+        <NuxtLink
+          to="/product"
+          class="bg-white text-blue-500 px-4 py-2 rounded shadow hover:bg-blue-600 hover:text-white transition"
+        >
+          Product
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          to="/cart"
+          class="bg-white text-blue-500 px-4 py-2 rounded shadow hover:bg-blue-600 hover:text-white transition"
+        >
+          Cart
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          to="/favorites"
+          class="bg-white text-blue-500 px-4 py-2 rounded shadow hover:bg-blue-600 hover:text-white transition"
+        >
+          Favorite
+        </NuxtLink>
+      </li>
+    </ul>
+  </nav>
+</template>
