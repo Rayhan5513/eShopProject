@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-blue-500 text-white p-4 flex justify-between items-center">
+  <nav class="bg-blue-500 text-white p-4 flex justify-between items-center h-20">
     <!-- Home Button on the Left -->
     <div>
       <NuxtLink

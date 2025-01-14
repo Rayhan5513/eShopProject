@@ -5,10 +5,11 @@
         <div class="md:ml-8">
           <h1 class="text-3xl font-bold">{{ product.title }}</h1>
           <p class="text-gray-500">${{ product.price }}</p>
-          <p class="mt-4">{{ product.description }}</p>
+          
           <button class="bg-green-500 text-white px-4 py-2 mt-4" @click="addToCart">
             Add to Cart
           </button>
+          <p class="mt-8">{{ product.description }}</p>
         </div>
       </div>
     </div>

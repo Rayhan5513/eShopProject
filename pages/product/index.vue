@@ -28,19 +28,23 @@
           :to="`/product/${product.id}`"
           class="block text-lg font-semibold mb-2 text-gray-900 hover:text-blue-500 transition-colors duration-300 relative z-10"
         >
-          {{ product.title }}
+        {{ product.title }}
         </NuxtLink>
 
-        <!-- Product price -->
-        <p class="text-gray-600 text-sm mb-4 group-hover:text-blue-500 transition-colors duration-300">{{ product.price }}</p>
+        <div class="flex w-auto justify-center">
+                  <!-- Product price -->
+        <p class="text-black font-bold text-3xl">${{ product.price }}</p>
 
-        <!-- Add to Cart Button aligned at the bottom -->
-        <button
-          @click="addToCart(product)"
-          class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 mt-auto relative z-20"
-        >
-          Add to Cart
-        </button>
+<!-- Add to Cart Button aligned at the bottom -->
+<button
+  @click="addToCart(product)"
+  class="w-auto bg-blue-500 text-white py-2 px-2 rounded-lg hover:bg-blue-600 transition-colors duration-300 mt-auto relative z-20 mb-3 ml-5"
+>
+  Add to Cart
+</button>
+        </div>
+
+
       </div>
     </div>
   </div>

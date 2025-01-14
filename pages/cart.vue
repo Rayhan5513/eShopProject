@@ -27,16 +27,18 @@
               {{ product.title }}
             </h2>
   
-            <!-- Product price -->
-            <p class="text-gray-600 text-sm mb-4">{{ product.price }}</p>
-  
-            <!-- Remove button -->
-            <button
-              @click="removeFromCart(product.id)"
-              class="w-full bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors duration-300"
-            >
-              Remove from Cart
-            </button>
+            <div class="flex w-auto justify-center">
+                  <!-- Product price -->
+        <p class="text-black font-bold text-3xl">${{ product.price }}</p>
+
+<!-- Add to Cart Button aligned at the bottom -->
+<button
+  @click="addToCart(product)"
+  class="w-auto bg-red-600 text-white py-2 px-2 rounded-lg hover:bg-red-950 transition-colors duration-300 mt-auto relative z-20 mb-3 ml-5"
+>
+  Remove from cart
+</button>
+        </div>
           </div>
         </div>
       </div>
