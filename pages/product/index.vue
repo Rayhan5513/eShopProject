@@ -77,13 +77,18 @@ const cart = ref(JSON.parse(localStorage.getItem('cart')) || []); // If no cart 
 
 // Add to Cart function
 const addToCart = (product) => {
-  // Add the product to the cart array
-  cart.value.push(product);
+  
+  // Check if the product already exists in the cart
+  if (!cart.value.find((item) => item.id === product.id)) {
+    // Add the product to the cart if it's not already there
 
-  // Save the updated cart to local storage
-  localStorage.setItem('cart', JSON.stringify(cart.value));
 
-  console.log('Product added to cart:', product);
+    cart.value = [...cart.value, product];
+    localStorage.setItem('cart', JSON.stringify(cart.value)); // Save the updated cart to localStorage
+    console.log('Product added to cart:', product);
+  } else {
+    console.log('The product already exists in the cart');
+  }
 };
 </script>
 

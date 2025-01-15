@@ -6,21 +6,25 @@
           <h1 class="text-3xl font-bold">{{ product.title }}</h1>
           <p class="text-gray-500">${{ product.price }}</p>
           
-          <button class="bg-green-500 text-white px-4 py-2 mt-4" @click="addToCart">
+          <button
+          @click="addToCart(product)"
+           class="bg-green-500 text-white px-4 py-2 mt-4">
             Add to Cart
           </button>
           <p class="mt-8">{{ product.description }}</p>
-        </div>
+        </div>    
       </div>
     </div>
   </template>
   
+  
   <script setup>
-  //import { ref, onMounted } from 'vue';
-  //import { useRoute } from 'vue-router';
+  import { ref, onMounted } from 'vue';
+  import { useRoute } from 'vue-router';
   
   const route = useRoute();
   const product = ref({});
+  const cart = ref(JSON.parse(localStorage.getItem('cart')) || []); // Initialize cart with localStorage data
   
   onMounted(async () => {
     const response = await fetch(`https://fakestoreapi.com/products/${route.params.id}`);
@@ -28,7 +32,10 @@
   });
   
   const addToCart = () => {
-    // Logic to add product to cart
+    cart.value.push({ ...product.value }); // Push a copy of the product
+    localStorage.setItem('cart', JSON.stringify(cart.value)); // Update localStorage
+    console.log('Product added to cart:', product.value);
   };
   </script>
+  
   
